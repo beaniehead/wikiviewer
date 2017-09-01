@@ -1,0 +1,244 @@
+.mainContainer {
+  background-color: #222534;
+  min-height: 100vh;
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: [c1] 10% [c2] 1fr [c3] 1fr [c4] 10% [c5];
+  grid-template-rows: [r1] 80px [r2] 60px [r3] 60px [r4] auto [r5] auto [r6] auto [r7] 0 [r8];
+  grid-template-areas: "header header header header" "searchinput searchinput searchinput searchinput " "search search search search" ". sep sep ." ". results results ." ". details details ." "footer footer footer footer";
+  grid-gap: 5px 5px;
+}
+
+.title {
+  grid-area: header;
+  text-align: center;
+  padding-bottom: 40px;
+  color: #CBCEDD;
+}
+
+.searchBar {
+  grid-area: searchinput;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.searchIcon {
+  grid-area: searchinput;
+  margin: auto;
+  z-index: 1;
+}
+
+.searchIconShow {
+  font-size: 3em;
+  color: #E3C21C;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.wikisearch {
+  background-color: #CBCEDD;
+  width: 0;
+  max-width: 250px;
+  opacity: 0;
+  z-index: 0;
+  transition: width 1.5s ease-in 0.2s, opacity 1.5s linear 0.2s;
+}
+
+.searchArea {
+  grid-area: search;
+  opacity: 0;
+  transition: opacity 1s linear 1.5s;
+}
+
+.buttonDiv {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.search {
+  text-align: center;
+  margin-bottom: 15px;
+  width: 70px;
+  border: 2px solid black;
+  background-color: #E3C21C;
+  font-weight: bold;
+  color: black;
+}
+
+.search:hover,
+.search:focus,
+.search:active {
+  background-color: #E3C21C;
+  font-weight: bold;
+  box-shadow: none;
+  border: 2px solid black;
+}
+
+.random {
+  color: #E3C21C;
+  padding-left: 50px;
+  font-size: 2.2em;
+}
+
+.sep {
+  color: #CBCEDD;
+  grid-area: sep;
+  text-align: center;
+}
+
+.sephr {
+  background-color: #CBCEDD;
+  color: #FDFCF7;
+  width: 0vw;
+  transition: width 1.7s ease;
+}
+
+.imageButton {
+  text-align: center;
+  margin-left: auto;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  width: 150px;
+  border: 2px solid black;
+  background-color: #E3C21C;
+  font-weight: bold;
+  color: black;
+  visibility: hidden;
+}
+
+.imageButton:hover,
+.imageButton:focus,
+.imageButton:active {
+  background-color: #E3C21C;
+  font-weight: bold;
+  box-shadow: none;
+  border: 2px solid black;
+}
+
+.results {
+  display: none;
+  grid-area: results;
+  grid-template-columns: repeat(auto-fit, minmax(35vw, 1fr));
+  grid-gap: 8px 8px;
+}
+
+.result {
+  border-radius: 7px;
+  border: 3px solid black;
+  background-color: #E3C21C;
+  padding: 10px;
+  display: grid;
+}
+
+.resultsImage {
+  width: 100%;
+}
+
+.titleLink {
+  font-size: 1.6em;
+}
+
+a.titleLink {
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+a.readMore {
+  color: blue;
+}
+
+.test {
+  display: none;
+}
+
+.details {
+  color: #ededed;
+  display: grid;
+  grid-area: details;
+  justify-items: center;
+  align-items: center;
+  transition: opacity 0.5s ease 0.3s;
+  z-index: 0;
+  background-color: #222534;
+}
+
+.resultsGroup {
+  width: 120px;
+  text-align: center;
+}
+
+.settingsTitle {
+  margin: 8px;
+  color: #CBCEDD;
+}
+
+.minus,
+.plus {
+  cursor: pointer;
+  background-color: #CBCEDD;
+}
+
+.resultsNumber {
+  text-align: center;
+  width: 50px;
+  background-color: #CBCEDD;
+  font-weight: bold;
+}
+
+.closer,
+.closer:hover,
+closer:focus,
+closer:active {
+  color: #222534;
+  background-color: #CBCEDD;
+  border: 1px solid #cbcbcb;
+  cursor: pointer;
+  box-shadow: none;
+  font-size: 0.9em;
+  padding: 7px 10px 7px 10px;
+}
+
+.settings {
+  display: grid;
+  align-items: end;
+  justify-items: center;
+  grid-area: details;
+  z-index: 2;
+  font-size: 2.4em;
+  transition: opacity 0.5s ease 0.3s;
+  background-color: #222534;
+}
+
+.settingsButton {
+  padding-bottom: 10px;
+  cursor: pointer;
+  color: #ededed;
+}
+
+.imageControl {
+  cursor: pointer;
+  text-align: center;
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.imageOn {
+  background-color: #CBCEDD;
+  color: #222534;
+}
+
+.imageOff {
+  background-color: red;
+  color: #CBCEDD;
+  font-weight: bold;
+}
+
+.footer {
+  grid-area: footer;
+  height: auto;
+  background-color: #1D1F20;
+}
